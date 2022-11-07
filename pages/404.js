@@ -10,7 +10,7 @@ const NotFound = () => {
       // router.go(1); // can go back and forth through the history
       router.push('/'); // redirect to the homepage after 3 seconds
     }, 3000);
-  }, []);
+  }, [router]);
 
   return (
     <div className="not-found">
