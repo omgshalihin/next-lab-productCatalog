@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Footer = () => (
-  <div>
+  <footer>
     Copyright 2021 Ninja List
-  </div>
+  </footer>
 );
 
 export default Footer;
