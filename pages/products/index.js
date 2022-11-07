@@ -4,20 +4,20 @@ import styles from '../../styles/Ninjas.module.css';
 
 // this runs before component is rendered
 export const getStaticProps = async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const response = await fetch('https://fakestoreapi.com/products');
   const data = await response.json(); // data is an array of objects
   return {
-    props: { ninjas: data },
+    props: { products: data },
   };
 };
 
 // http://localhost:3000/ninjas
-const Ninjas = ({ ninjas }) => (
+const Ninjas = ({ products }) => (
   <div>
-    <h1>All Ninjas</h1>
-    {ninjas.map(ninja => (
-      <Link href={`/ninjas/${ninja.id}`} className={styles.single} key={ninja.id}>
-        <h3>{ninja.name}</h3>
+    <h1>All Products</h1>
+    {products.map(product => (
+      <Link href={`/products/${product.id}`} className={styles.single} key={product.id}>
+        <h3>{product.title}</h3>
       </Link>
     ))}
   </div>
