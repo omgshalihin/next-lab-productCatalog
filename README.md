@@ -1,34 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js - Product Catalog
 
-## Getting Started
+## A. Scenario
 
-First, run the development server:
+Next.js is a perfect vehicle to build something quick, but not so dirty. In fact, it gives you a very good starting point to continue to build off.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Just as you thought that to yourself, the developer next to you says:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> You know what would be great, if we could have a product catalog on our intranet. Nothing fancy, we can drive it of an exported JSON file.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Did that lightbulb make a sound, or was it just in your head? We're gonna do this.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## B. What you will be working on today
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+You will build a product navigation application, that lists, show details and search list of products. For now, you can pass this product list (that actually comes from here <https://fakestoreapi.com/>) as props.
 
-## Learn More
+The application should support the following features:
 
-To learn more about Next.js, take a look at the following resources:
+- List all products - show title, image, price and category in the list
+- Show details for one of the products (show all the data)
+- Filter the product list on categories
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If you have time over, consider adding:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Add new product - this needs to be a client-side component... Why?
+- Update product data - this too needs to be a client-side component.
+- Delete a product
+- Add a free text search that searches for a value in any field
 
-## Deploy on Vercel
+For all those exercises, you could still just manipulate the product JSON, for this exercise, but it is not hard to change to use the API, <https://fakestoreapi.com/>. Change to the API.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## C. Lab instructions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+We want you to use Next.js and its features, such as `<Link>`, `<Image>` and routing and/or layouting conventions. Create separate pages for the product listing and product details and build them with sensible `Component` structure.
+
+Create the initial structure with `npx create-next-app next-product-catalog`
+
+There is the data, that is stored here `./data/data.json` and can be imported through `const products = require('./data/json');`
+
+## D. Testing and linting setup
+
+The main focus of this exercise is to get your feet wet with Next.js. Still, we encourage you to write tests and make sure your App is working well as intended.
+
+Here is the instruction on how to test your App.
+
+- Unit tests:
+
+  - Write a few unit tests for the core functionality
+  - Break this functionality out to separate functions
+  - Consider how you can test that functionality without running the component
+  - Remember that a unit test runs fast, in isolation and does not do any IO
+
+- Integration test:
+
+  - Write a few integration tests that test a page
+  - Write a few integration tests that test a component
+  - Mock network calls
+  - Make verifications to the rendered component using https://testing-library.com
+
+- End-to-end test:
+  - Write a few e2e tests using Cypress https://www.cypress.io/
+  - Make verifications against `cy` elements
+  - What if the component creates data? How can you clean/restore test data?
+
+---
+
+Good luck and have fun!
