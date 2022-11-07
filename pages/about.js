@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+
 // http://localhost:3000/about
 const About = () => (
   <div>
